@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+
+{% block content %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zgłoś Wniosek</title>
+    <link href="/static/style.css" rel="stylesheet">
+
+</head>
+<body>
+<h1>Zgłoś Wniosek</h1>
+<h2>Każde zgłoszenie które nie zostało spowodowane awarią infratruktury IT</h2>
+
+
+
+
+
+<div class="input_request">
+
+    <form method="POST" action="make_request">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+    <label>
+        Requestor:
+
+        <input type="text"
+               name="Requestor">
+        </label>
+
+<br>
+    <label>
+        Beneficiary:
+
+        <input type="text"
+               name="Beneficiary">
+        </label>
+    <br>
+
+
+    <label>
+        AssetNumber:
+        </label>
+        <input type="text"
+               name="AssetNumber">
+        </label>
+
+<br>
+    <label>
+        Category:
+
+        <input type="text"
+               name="Category">
+        </label>
+
+<br>
+    <label>
+        Comment:
+
+        <input type="text"
+               name="Comment">
+        </label>
+
+<br>
+
+
+            <div class="btn-primary">
+                <input type="submit" value="Wyślij">
+            </div>
+
+    </form>
+    </div>
+
+
+{% endblock %}
+</body>
+</html>

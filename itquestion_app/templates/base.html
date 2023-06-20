@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ITQuestion</title> <!-- <title>{% block title %}Django Auth Tutorial{% endblock %}</title> -->
+  <link href="/static/style.css" rel="stylesheet"> <!--Link do cssa-->
+
+</head>
+<body>
+<div class="">
+
+  {% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p> <a href="{% url 'logout' %}">Log Out</a> </p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+
+</div>
+
+<h1>Welcome in ITQ support tasks system</h1>
+
+<div class="navbar">
+  <a class="btn btn-inc" href="/incident">  Nowe Incydent</a>  <!--Jeśli zalgowany, przekieruj na nowe zgłoszenie-->
+  <a class="btn btn-req" href="/request">  Nowy Wniosek</a>
+  <a class="btn btn-cal" href="/calendar">  Kalendarz</a>
+</div>
+
+{% block content %}
+
+
+
+<div class="navbar">
+
+
+
+
+
+  {% endblock %}
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
