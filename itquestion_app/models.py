@@ -1,6 +1,5 @@
 from django.db import models
-
-
+from django.forms import ModelForm
 
 
 class RequestModel(models.Model):
@@ -12,8 +11,5 @@ class RequestModel(models.Model):
 
     def is_valid(self):
         pass
-
-
-
 
 

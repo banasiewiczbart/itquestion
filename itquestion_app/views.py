@@ -3,6 +3,9 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpRequest
 from .forms import RequestForm
 from .models import RequestModel
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
+from itquestion_app.forms import SignUpForm
 
 
 def show_request(request):
@@ -13,6 +16,12 @@ def done_request_view(request):
 
 def no_login_request_view(request):
     return render(request, "no-login_request.html")
+
+# Sign Up View
+class SignUpView(CreateView):
+    form_class = SignUpForm
+    success_url = reverse_lazy ('login')
+    template_name = 'registration/signup.html'
 
 
 

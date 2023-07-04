@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
 from itquestion_app import views
+from itquestion_app.views import SignUpView
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
@@ -28,5 +30,10 @@ urlpatterns = [
     path('request/make_request', views.make_request_view, name='make_request'),
     path('done_request_screen', views.done_request_view),
     path('calendar/', views.calendar_view, name="calendar_path"),
+    path('signup/', SignUpView.as_view(), name='signup'),
+    path('login/', auth_views.LoginView.as_view(), name='login'),
+
+
+
 
 ]

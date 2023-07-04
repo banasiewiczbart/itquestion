@@ -34,3 +34,9 @@ border-radius: 20px;
 div.btn-primary {
 left: 20px;
 }
+
+div.version {
+right: 40px;
+text-align: right;
+
+}

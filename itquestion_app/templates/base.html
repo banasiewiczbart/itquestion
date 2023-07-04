@@ -6,6 +6,10 @@
   <title>ITQuestion</title> <!-- <title>{% block title %}Django Auth Tutorial{% endblock %}</title> -->
   <link href="/static/style.css" rel="stylesheet"> <!--Link do cssa-->
 
+<div class="version">   <!-- Wersja! -->
+  <p>v1.1</p>
+</div>
+
 </head>
 <body>
 <div class="">
@@ -16,9 +20,15 @@
 {% else %}
   <p>You are not logged in</p>
   <a href="{% url 'login' %}">Log In</a>
+
+  <p> or sign up to the ITquestion now!</p>
+  <a href="{% url 'signup' %}">Sign Up</a>
+
 {% endif %}
 
 </div>
+
+
 
 <h1>Welcome in ITQ support tasks system</h1>
 
